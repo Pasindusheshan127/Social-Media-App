@@ -1,9 +1,12 @@
+import Share from "../Shere/Share";
 import "./Post.css";
 
 const Post = () => {
   return (
     <div className="post">
-      <div className="postwrapper"></div>Post
+      <div className="postwrapper">
+        <Share />
+      </div>
     </div>
   );
 };
