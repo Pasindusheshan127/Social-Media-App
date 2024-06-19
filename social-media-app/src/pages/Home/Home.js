@@ -1,4 +1,4 @@
-import Post from "../../components/Post/Post";
+import Feed from "../../components/Feed/Feed";
 import Rightbar from "../../components/Rightbar/Rightbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
@@ -9,7 +9,7 @@ const Home = () => {
       <Topbar />
       <div className="homecontainer">
         <Sidebar />
-        <Post />
+        <Feed />
         <Rightbar />
       </div>
     </div>
