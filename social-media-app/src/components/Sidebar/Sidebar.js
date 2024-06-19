@@ -53,6 +53,106 @@ const Sidebar = () => {
             <span className="sidebarListitemText">Courses</span>
           </li>
         </ul>
+        <button className="sidebarButton">Show More</button>
+        <hr className="sidebarHr" />
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+          <li className="sidebarFriend">
+            <div className="sidebarFriendItem">
+              <img
+                className="sidebarFriendImg"
+                src="assets/person/1.jpeg"
+                alt=""
+              />
+              <div className="sidebarFriendName">
+                <span className="sidebarFriendNameText">Isuru</span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );
