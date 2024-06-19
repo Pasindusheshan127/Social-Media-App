@@ -1,7 +1,11 @@
 import "./Post.css";
 
 const Post = () => {
-  return <div className="post">Post</div>;
+  return (
+    <div className="post">
+      <div className="postwrapper"></div>Post
+    </div>
+  );
 };
 
 export default Post;
