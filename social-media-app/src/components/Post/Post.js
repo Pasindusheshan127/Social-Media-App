@@ -1,7 +1,7 @@
-import React from "react";
+import "./Post.css";
 
 const Post = () => {
-  return <div>Post</div>;
+  return <div className="post">Post</div>;
 };
 
 export default Post;

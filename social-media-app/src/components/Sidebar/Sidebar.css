@@ -1,0 +1,23 @@
+.sidebar {
+  flex: 3;
+  height: calc(100vh-50px);
+}
+
+.sidebarwrapper {
+  padding: 20px;
+  background-color: greenyellow;
+}
+.sidebarIcon {
+  height: 32px;
+  height: 32px;
+}
+.sidebarList {
+}
+.sidebarListItem {
+}
+.sidebarIcon {
+}
+.sidebarListitemText {
+  margin-left: 10px;
+  cursor: pointer;
+}
