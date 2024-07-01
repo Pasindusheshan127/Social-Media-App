@@ -5,8 +5,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Profile from "./pages/Profile";
+//import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { AuthContext } from "./context/AuthContext";
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Routes>
         {/* <Route path="/" element={user ? <Home /> : <Register />} /> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Profile />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route
           path="/register"
