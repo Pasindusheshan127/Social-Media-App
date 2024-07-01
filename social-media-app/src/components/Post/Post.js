@@ -1,14 +1,21 @@
 import { MoreHorizOutlined } from "@mui/icons-material";
 import "./Post.css";
-const Post = () => {
+import { Users } from "../../data/DummyData";
+const Post = ({ post }) => {
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img className="postProfileImg" src="assets/person/1.jpeg" alt="" />
-            <span className="postUsername">username</span>
-            <span className="postDate">1 hour ago</span>
+            <img
+              className="postProfileImg"
+              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
+              alt=""
+            />
+            <span className="postUsername">
+              {Users.filter((u) => u.id === post.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreHorizOutlined />
@@ -16,18 +23,18 @@ const Post = () => {
         </div>
       </div>
       <div className="postCenter">
-        <span className="postText">hey ! its my first post.</span>
+        <span className="postText">{post.desc}</span>
         <img className="postImg" src="assets/post/1.jpg" alt="" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
           <img className="likeIcon" src="assets/icons/like.png" alt="" />
-          <img className="likeIcon" src="assets/icons/like.png" alt="" />
-          <img className="likeIcon" src="assets/icons/like.png" alt="" />
+          <img className="likeIcon" src="assets/icons/heart.png" alt="" />
+          <img className="likeIcon" src="assets/icons/loveReact.png" alt="" />
         </div>
-        <span className="postLikeCounter">1.5k likes</span>
+        <span className="postLikeCounter">{post.like} likes</span>
         <div className="postBottomRight">
-          <span className="postCommentText">12 comments</span>
+          <span className="postCommentText">{post.comment} comments</span>
         </div>
       </div>
     </div>
