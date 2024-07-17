@@ -1,10 +1,24 @@
 import { MoreHorizOutlined } from "@mui/icons-material";
 import "./Post.css";
-import { Users } from "../../data/DummyData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import TimeAgo from "react-timeago";
+
 const Post = ({ post }) => {
-  const [like, setLike] = useState(post.like);
+  const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+  const [user, setUser] = useState({});
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await axios.get(
+        `http://localhost:8800/api/users/${post.userId}`
+      );
+      setUser(res.data);
+    };
+    fetchUsers();
+  }, [post.userId]);
 
   const likeHandler = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -18,13 +32,13 @@ const Post = ({ post }) => {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
+              src={user.profilePicture || PF + "person/noAvatar.png"}
               alt=""
             />
-            <span className="postUsername">
-              {Users.filter((u) => u.id === post.userId)[0].username}
+            <span className="postUsername">{user.username}</span>
+            <span className="postDate">
+              <TimeAgo date={post.createdAt} />
             </span>
-            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreHorizOutlined />
@@ -33,19 +47,19 @@ const Post = ({ post }) => {
       </div>
       <div className="postCenter">
         <span className="postText">{post.desc}</span>
-        <img className="postImg" src="assets/post/1.jpg" alt="" />
+        <img className="postImg" src={PF + post.img} alt="" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
           <img
             className="likeIcon"
-            src="assets/icons/like.png"
+            src={`${PF}like.png`}
             alt=""
             onClick={likeHandler}
           />
           <img
             className="likeIcon"
-            src="assets/icons/heart.png"
+            src={`${PF}heart.png`}
             alt=""
             onClick={likeHandler}
           />
