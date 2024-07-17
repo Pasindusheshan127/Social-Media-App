@@ -3,6 +3,7 @@ import "./Post.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TimeAgo from "react-timeago";
+import { Link } from "react-router-dom";
 
 const Post = ({ post }) => {
   const [like, setLike] = useState(post.likes.length);
@@ -13,7 +14,7 @@ const Post = ({ post }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get(
-        `http://localhost:8800/api/users/${post.userId}`
+        `http://localhost:8800/api/users?userId=${post.userId}`
       );
       setUser(res.data);
     };
@@ -30,11 +31,13 @@ const Post = ({ post }) => {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
-              className="postProfileImg"
-              src={user.profilePicture || PF + "person/noAvatar.png"}
-              alt=""
-            />
+            <Link to={`/profile/${user.username}`}>
+              <img
+                className="postProfileImg"
+                src={user.profilePicture || PF + "person/noAvatar.png"}
+                alt=""
+              />
+            </Link>
             <span className="postUsername">{user.username}</span>
             <span className="postDate">
               <TimeAgo date={post.createdAt} />
