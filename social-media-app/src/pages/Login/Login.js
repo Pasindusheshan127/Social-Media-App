@@ -1,12 +1,19 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "./Login.css";
+import { loginCall } from "../../api/ApiCall";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const email = useRef();
   const password = useRef();
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(email.current.value, password.current.value);
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+    console.log(user);
   };
 
   return (
@@ -35,11 +42,14 @@ const Login = () => {
               required
               ref={password}
             />
-            <button className="loginButton">Log In</button>
+            <button className="loginButton" type="submit" disabled={isFetching}>
+              {isFetching ? "loading" : "Log In"}
+            </button>
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
-              Create a New Account
+              {isFetching ? "loading" : "Create a New Account"}
             </button>
+            {/* {error && <span className="loginError">Something went wrong...</span>} */}
           </form>
         </div>
       </div>

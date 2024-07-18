@@ -32,7 +32,7 @@ const Profile = () => {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={user.coverPicture || PF + "post/3.jpeg"}
+                src={user.coverPicture || PF + "person/noCover.jpg"}
                 alt=""
               />
               <img

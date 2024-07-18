@@ -10,10 +10,11 @@ const Rightbar = ({ user }) => {
         <div className="bithdayContainer">
           <img src="assets/gift.png" alt="" className="birthdayImg" />
           <span className="birthdayText">
-            <b>Pola Poster</b> and <b> other friends</b> have a birthday today
+            <b>kavith vimansa</b> and <b> other friends</b> have a birthday
+            today
           </span>
         </div>
-        <img src="assets/ad.png" alt="" className="rightbarAd" />
+        <img src="assets/add.jpg" alt="" className="rightbarAd" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
           {Users.map((u) => (
