@@ -1,12 +1,14 @@
 import "./Register.css";
 import { useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const Username = useRef();
   const email = useRef();
   const password = useRef();
   const passwordAgain = useRef();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const Register = () => {
       };
       try {
         await axios.post("http://localhost:8800/api/auth/register", user);
+        navigate("/login");
       } catch (error) {
         console.log(error);
       }
