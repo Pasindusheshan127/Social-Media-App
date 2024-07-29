@@ -16,6 +16,7 @@ const path = require("path");
 // Load environment variables from .env file
 dotenv.config();
 
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 // Middleware setup
 app.use(helmet());
 app.use(morgan("common"));
