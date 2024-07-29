@@ -35,6 +35,9 @@ const Post = ({ post }) => {
     } catch (err) {
       console.log(err);
     }
+
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
   };
 
   return (
